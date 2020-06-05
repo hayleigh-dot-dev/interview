@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build:prod": "parcel build src/index.html -d docs --public-url /programming-practice-interview/ --no-source-maps --no-content-hash"
+    "build:prod": "parcel build src/index.html -d docs --public-url /programming-practice-interview/ --no-source-maps --no-content-hash",
+    "start": "node heroku.js"
   },
   "author": "Andrew Thompson",
   "license": "MIT",
