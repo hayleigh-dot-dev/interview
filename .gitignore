@@ -1,0 +1,11 @@
+# parcel
+.cache
+
+# npm
+node_modules
+
+# elm
+elm-stuff
+
+# vscode
+.vscode
