@@ -7,22 +7,10 @@
 
   <title>Document</title>
 
-  <script>
-    const env = process.env.NODE_ENV
-    const tag = document.querySelector('head > script')
+  <link rel="stylesheet" href="./css/tailwind.css">
+  <link rel="stylesheet" href="./css/layout.css">
 
-    const baseUrl = env == 'production'
-      ? 'https://pd-andy.github.io/interview/'
-      : 'http://localhost:1234/'
-
-    tag.insertAdjacentHTML('afterend', `<base href="${baseUrl}">`)
-  </script>
-
-
-  <link rel="stylesheet" href="css/tailwind.css">
-  <link rel="stylesheet" href="css/layout.css">
-
-  <script defer src="main.js"></script>
+  <script defer src="./main.js"></script>
 </head>
 
 <body>
