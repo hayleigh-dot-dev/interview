@@ -1,5 +1,5 @@
-export function init (elm) {
-  const ws = new WebSocket('ws://qmul-qsort.herokuapp.com/')
+export function init(elm) {
+  const ws = new WebSocket('wss://qmul-qsort.herokuapp.com/')
 
   // When the socket connection opens, set up the subscription from elm so we
   // can start sending data.
