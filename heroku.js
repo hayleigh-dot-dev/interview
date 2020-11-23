@@ -6,6 +6,7 @@ const Port = process.env.PORT || 3000
 
 const server = Express()
 
+server.use((_, res) => res.sendStatus(200))
 server.use(Cors())
 server.listen(Port)
 
