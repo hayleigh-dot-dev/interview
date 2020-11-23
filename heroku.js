@@ -1,9 +1,14 @@
+const Cors = require('cors')
 const Express = require('express')
 const WebSocket = require('ws')
 
 const Port = process.env.PORT || 3000
 
-const server = Express().listen(Port)
+const server = Express()
+
+server.use(Cors())
+server.listen(Port)
+
 const socket = new WebSocket.Server({ server })
 
 const clients = {}
@@ -22,7 +27,7 @@ socket.on('connection', ws => {
   })
 })
 
-function broadcast (message, senderWs) {
+function broadcast(message, senderWs) {
   Object.values(clients).forEach(ws => {
     if (senderWs === ws) return
 
