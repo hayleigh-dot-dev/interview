@@ -6,6 +6,11 @@ const qItem = (key, title, image, description) => ({
   rating: 'Neutral'
 })
 
+Array.prototype.shuffle = function () {
+  return this.map(function (n) { return [Math.random(), n] })
+    .sort().map(function (n) { return n[1] });
+}
+
 export const all = {
   type: 'BasicSort',
   title: 'Programming Language Features',
@@ -90,15 +95,15 @@ export const all = {
       has the id "superCoolElement", then null is returned and so this should
       be checked before trying to do anything with the "el" variable.`
     ]),
-    qItem('08', 'Run-time errors are encoded at the type level and handled as normal values', 'error-types', [
-      `In some languages such as Java, errors are represented as "exceptions"
-      that are thrown and must be caught to prevent the program from crashing.
-      In other languages however, errors are represented as values like any
-      other and can be manipulated and passed around as normal.`,
-      `The Result type above demonstrates this. Instead of throwing an exception,
-      the Result type describes a computation that might fail, and forces the
-      developer to handle both cases whenever validating a month number.`
-    ]),
+    // qItem('08', 'Run-time errors are encoded at the type level and handled as normal values', 'error-types', [
+    //   `In some languages such as Java, errors are represented as "exceptions"
+    //   that are thrown and must be caught to prevent the program from crashing.
+    //   In other languages however, errors are represented as values like any
+    //   other and can be manipulated and passed around as normal.`,
+    //   `The Result type above demonstrates this. Instead of throwing an exception,
+    //   the Result type describes a computation that might fail, and forces the
+    //   developer to handle both cases whenever validating a month number.`
+    // ]),
     qItem('09', 'The language supports code macros', 'macros', [
       `Some languages support macros as a means of generating or inserting
       bits of code into an existing piece of code. The code snippet is
@@ -109,15 +114,15 @@ export const all = {
       to manipulate macros, and so functions can be written to generate macros
       at run-time.`
     ]),
-    qItem('10', 'The language supports reflection and/or introspection', 'reflection-and-introspection', [
-      `Languages that support reflection and/or introspection are capable of
-      examining a program at run-time. In doing so, these programs are able to
-      modify their own structure or behaviour, defining new types and inspecting
-      the type or properties of values at run-time.`,
-      `The above Java snippet gets all the methods defined in MyClass, and
-      prints their names to the console. Reflection is particularly useful for
-      serialising objects into a format such as JSON.`
-    ]),
+    // qItem('10', 'The language supports reflection and/or introspection', 'reflection-and-introspection', [
+    //   `Languages that support reflection and/or introspection are capable of
+    //   examining a program at run-time. In doing so, these programs are able to
+    //   modify their own structure or behaviour, defining new types and inspecting
+    //   the type or properties of values at run-time.`,
+    //   `The above Java snippet gets all the methods defined in MyClass, and
+    //   prints their names to the console. Reflection is particularly useful for
+    //   serialising objects into a format such as JSON.`
+    // ]),
     qItem('11', 'The language has a comprehensive standard library covering areas such as UI, graphics, networking, and more complex audio constructs', '', [
       `The language provides packages or modules for a wide variety of programming
       tasks as part of it's standard library.`,
@@ -157,14 +162,14 @@ export const all = {
       the "where" keyword. When the program is run, the test cases are evaluated
       and an exception is thrown if the result does not match the expected output.`
     ]),
-    qItem('15', 'Public packages must be fully documented before they are published', 'documentation', [
-      `In many languages it is a common convention to have special documentation
-      comments, such as the popular JavaDoc style, to provide structured
-      documentation for a function or package.`,
-      `Some package repositories require the presence of these special comments
-      in any exposed function or class to help developers and consumers of the
-      package.`
-    ]),
+    // qItem('15', 'Public packages must be fully documented before they are published', 'documentation', [
+    //   `In many languages it is a common convention to have special documentation
+    //   comments, such as the popular JavaDoc style, to provide structured
+    //   documentation for a function or package.`,
+    //   `Some package repositories require the presence of these special comments
+    //   in any exposed function or class to help developers and consumers of the
+    //   package.`
+    // ]),
     qItem('16', 'The language has an online editor or playground', 'online-editor', [
       `An online editor or playground allows developers to experiment with the
       language without downloading anything or setting up any tooling.`,
@@ -203,15 +208,15 @@ export const all = {
       name of the function or want to explore different implementations with
       the same type signature.`
     ]),
-    qItem('21', 'There is an official linter that detects common problems and anti-patterns such as unused imports or duplicate variable names', 'linter', [
-      `A linter is a tool that detects bad practices, ineffecient code, or
-      common anti-patterns, and suggests how to fix those issues. These tools
-      are often maintained by the community and are configurable to taste.`,
-      `Some languages, however, include an official linter as part of the
-      language distribution such as with Go. The benefit of such a linter is
-      that they are often not user-configurable, ensuring the entire community
-      is often adhering to the same standards and practices.`
-    ]),
+    // qItem('21', 'There is an official linter that detects common problems and anti-patterns such as unused imports or duplicate variable names', 'linter', [
+    //   `A linter is a tool that detects bad practices, ineffecient code, or
+    //   common anti-patterns, and suggests how to fix those issues. These tools
+    //   are often maintained by the community and are configurable to taste.`,
+    //   `Some languages, however, include an official linter as part of the
+    //   language distribution such as with Go. The benefit of such a linter is
+    //   that they are often not user-configurable, ensuring the entire community
+    //   is often adhering to the same standards and practices.`
+    // ]),
     qItem('22', 'User interfaces can be built using a drag-and-drop editor', 'gui-editor', [
       `Some may find developing more complex user interfaces through plain
       code cumbersome or difficult to manage. As an alternative, a number of
@@ -234,14 +239,14 @@ export const all = {
       does not. It mutates a global y variable, and uses Math.random meaning
       the return value can change even when the arguments stay the same.`
     ]),
-    qItem('25', 'Functions are first-class values and can be stored in variables and passed as arguments to other functions', 'first-class-functions', [
-      `First-class functions means that functions are not treated as a special
-      language construct or data type. They can be passed to other functions
-      or stored in variables, arrays, etc.`,
-      `The code snippet shows a function being used as an argument to the
-      Array.map method. Array.map will then call that function on every element
-      in the array to transform it.`
-    ]),
+    // qItem('25', 'Functions are first-class values and can be stored in variables and passed as arguments to other functions', 'first-class-functions', [
+    //   `First-class functions means that functions are not treated as a special
+    //   language construct or data type. They can be passed to other functions
+    //   or stored in variables, arrays, etc.`,
+    //   `The code snippet shows a function being used as an argument to the
+    //   Array.map method. Array.map will then call that function on every element
+    //   in the array to transform it.`
+    // ]),
     qItem('26', 'Variable names cannot be shadowed', 'shadowing', [
       `Shadowing refers to the practice of creating a new variable with the
       same name as another variable in the outer scope. This can be convinient
@@ -249,13 +254,13 @@ export const all = {
       can also make code more difficult to read as developers must have to
       remember which "x" is available in the current scope.`
     ]),
-    qItem('27', 'The language supports objects with local properties and methods', 'objects', [
-      `In object-oriented programming, a particular domain is modelled around
-      objects which contain some local state and some methods to manipulate
-      that state. This is principally a way of controlling encapsulation: certain
-      properties or state can be hidden and made accessible or modifiable via
-      an object's methods.`
-    ]),
+    // qItem('27', 'The language supports objects with local properties and methods', 'objects', [
+    //   `In object-oriented programming, a particular domain is modelled around
+    //   objects which contain some local state and some methods to manipulate
+    //   that state. This is principally a way of controlling encapsulation: certain
+    //   properties or state can be hidden and made accessible or modifiable via
+    //   an object's methods.`
+    // ]),
     qItem('28', 'The language enforces a specific type of application structure or architecture', '', [
       `There are many different ways to architecture and structure an applications.
       Some languages take a more opinionated approach and impose a particular
@@ -284,13 +289,13 @@ export const all = {
       platform, an FFI can allow those languages to share code and data structures
       as is the case in .NET languages like C#, F#, and BASIC.`
     ]),
-    qItem('31', 'Functions can be partially applied by supplying on some of it\'s arguments', 'partial-application', [
-      `Partial application makes it easy to create new functions by supplying only
-      some of the arguments to an existing function.`,
-      `The code snippet shows the definition of an add function, and then a new
-      add10 function being created by only supplying on argument to that add
-      function.`
-    ]),
+    // qItem('31', 'Functions can be partially applied by supplying on some of it\'s arguments', 'partial-application', [
+    //   `Partial application makes it easy to create new functions by supplying only
+    //   some of the arguments to an existing function.`,
+    //   `The code snippet shows the definition of an add function, and then a new
+    //   add10 function being created by only supplying on argument to that add
+    //   function.`
+    // ]),
     qItem('32', 'The language has a different syntax for different parts of a program', 'different-syntax', [
       `Instead of keeping the same syntax for all parts of a program, some languages
       attempt to have different syntax (and sometimes semantics) more specifically
@@ -301,15 +306,15 @@ export const all = {
       example, but both benefit from being specifically designed for that part of
       the program.`
     ]),
-    qItem('33', 'Compiler errors have a specific error code associated with them that can be used to find out more information about a particular error', 'error-codes', [
-      `Sometimes a compiler or run-time error can have an explanation or additional
-      information that is not practical to print to the terminal/console. In those
-      cases the language might provide a specific error code that can be looked up
-      in the language's reference for more information.`,
-      `The image shows an example from Rust's error code reference, in this case
-      the error code is E00299. It features an explanation on how the error is
-      produced and a code example to exemplify that.`
-    ]),
+    // qItem('33', 'Compiler errors have a specific error code associated with them that can be used to find out more information about a particular error', 'error-codes', [
+    //   `Sometimes a compiler or run-time error can have an explanation or additional
+    //   information that is not practical to print to the terminal/console. In those
+    //   cases the language might provide a specific error code that can be looked up
+    //   in the language's reference for more information.`,
+    //   `The image shows an example from Rust's error code reference, in this case
+    //   the error code is E00299. It features an explanation on how the error is
+    //   produced and a code example to exemplify that.`
+    // ]),
     qItem('34', 'The compiler provides suggestions on how to fix a compiler error', 'compiler-suggestions', [
       `Some languages are able to offer suggestions or provide a more detailed
       error message during compile or run-time errors. When done well they can
@@ -333,5 +338,5 @@ export const all = {
       exists that records interaction events and allows them to be rewound and
       played back.`
     ])
-  ]
+  ].shuffle()
 }
